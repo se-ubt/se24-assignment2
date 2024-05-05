@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: default
     env:
-      SONAR_ORGANIZATION: add-your-sonar-organization-here
-      SONAR_PROJECT_KEY: add-your-sonar-project-key-here
+      SONAR_ORGANIZATION: wafi-kamoun
+      SONAR_PROJECT_KEY: wafi-kamoun_se24-assignment2
 
     steps:
       - uses: actions/checkout@v4
