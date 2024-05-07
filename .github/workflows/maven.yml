@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: default
     env:
-      SONAR_ORGANIZATION: add-your-sonar-organization-here
-      SONAR_PROJECT_KEY: add-your-sonar-project-key-here
+      SONAR_ORGANIZATION: wafi-kamoun
+      SONAR_PROJECT_KEY: wafi-kamoun_se24-assignment2
 
     steps:
       - uses: actions/checkout@v4
@@ -38,8 +38,8 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      #- name: Scan with SonarCloud
-      #  run: mvn clean verify sonar:sonar -Pcoverage -Dsonar.token=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.projectKey=$SONAR_PROJECT_KEY
+      - name: Scan with SonarCloud
+        run: mvn clean verify sonar:sonar -Pcoverage -Dsonar.token=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.projectKey=$SONAR_PROJECT_KEY
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
